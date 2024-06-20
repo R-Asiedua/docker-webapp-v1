@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f9;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,13 +16,18 @@ body {
 }
 
 .login-container {
-    background-color: #ffffff;
+    background-color: hsl(0, 0%, 100%);
     padding: 40px 50px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 100%;
     max-width: 400px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.login-container:hover {
+    transform: translateY(-5px);
 }
 
 .login-container h1 {
@@ -55,11 +60,12 @@ body {
     border: 1px solid #cccccc;
     border-radius: 5px;
     font-size: 16px;
-    transition: border-color 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .input-group input:focus {
     border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
     outline: none;
 }
 
@@ -71,17 +77,19 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 button:hover {
     background-color: #0056b3;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
 button:active {
     background-color: #004085;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(1px);
 }
 
 @media (max-width: 600px) {
@@ -104,7 +112,6 @@ button:active {
     }
     
     button {
-        font-size: 14px;
-        padding: 10px 15px;
+        font-size: 14px
     }
 }
